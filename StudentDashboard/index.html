@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+    
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <a href="#" class="logo">Student<span>Hub</span></a>
+        <span class="subtitle">STUDENT MANAGEMENT SYSTEM</span>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">ACADEMIC OVERVIEW</p>
+            <h1>Student Dashboard</h1>
+            <p>Manage students, analyze marks, and track performance.</p>
+        </section>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <p>Total Students</p>
+                <h2 id="total-students">0</h2>
+            </article>
+            <article class="stat-card">
+                <p>Average Marks</p>
+                <h2 id="average-marks">0</h2>
+            </article>
+            <article class="stat-card">
+                <p>Highest Marks</p>
+                <h2 id="highest-marks">—</h2>
+                <small id="top-student">No students yet</small>
+            </article>
+            <article class="stat-card">
+                <p>Lowest Marks</p>
+                <h2 id="lowest-marks">—</h2>
+                <small id="lowest-student">No students yet</small>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">01 / MANAGEMENT</p>
+                    <h2>Add a Student</h2>
+                </div>
+            </div>
+
+            <form id="student-form">
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="student-name">Student Name</label>
+                        <input type="text" id="student-name" placeholder="Enter full name" maxlength="60" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="student-marks">Marks (0–100)</label>
+                        <input type="number" id="student-marks" placeholder="e.g. 85" min="0" max="100" step="1"
+                            required>
+                    </div>
+                </div>
+
+                <button type="submit" class="primary-btn" id="primary-btn">
+                    + Add Student
+                </button>
+                <p id="form-message" class="message" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">02 / DIRECTORY</p>
+                    <h2>All Students</h2>
+                </div>
+                <span id="result-count" class="count-badge">0 records</span>
+            </div>
+
+            <div class="toolbar">
+                <input type="search" id="search-input" placeholder="Search by student name..."
+                    aria-label="Search students">
+
+                <select id="sort-select" aria-label="Sort students">
+                    <option value="default">Default order</option>
+                    <option value="name-asc">Name: A to Z</option>
+                    <option value="name-desc">Name: Z to A</option>
+                    <option value="marks-asc">Marks: Low to High</option>
+                    <option value="marks-desc">Marks: High to Low</option>
+                </select>
+
+                <select id="grade-filter" aria-label="Filter by grade">
+                    <option value="all">All grades</option>
+                    <option value="A">Grade A</option>
+                    <option value="B">Grade B</option>
+                    <option value="C">Grade C</option>
+                    <option value="D">Grade D</option>
+                    <option value="F">Grade F</option>
+                </select>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Marks</th>
+                            <th>Grade</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-list">
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="empty-message" class="empty-message">
+                No students found. Add your first student above!
+            </p>
+        </section>
+
+        <section class="panel">
+            <p class="eyebrow">03 / ANALYTICS</p>
+            <h2>Performance Summary</h2>
+
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <span>Passed</span>
+                    <strong id="passed-count">0</strong>
+                </div>
+                <div class="summary-item">
+                    <span>Failed</span>
+                    <strong id="failed-count">0</strong>
+                </div>
+                <div class="summary-item">
+                    <span>Pass Rate</span>
+                    <strong id="pass-rate">0%</strong>
+                </div>
+            </div>
+
+            <p class="hint">
+                Passing marks: 33 out of 100. Grades are calculated
+                automatically from marks.
+            </p>
+        </section>
+
+        <footer>
+            Built with HTML, CSS and JavaScript arrays.
+        </footer>
+    </main>
+    <!-- <script src="script.js" defer></script> -->
+    <script src="scriptmain.js" defer></script>
+</body>
+
+</html>
